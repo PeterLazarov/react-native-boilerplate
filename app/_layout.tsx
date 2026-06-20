@@ -14,6 +14,7 @@ import { StatusBar } from 'expo-status-bar';
 import { KeyboardProvider, KeyboardToolbar } from 'react-native-keyboard-controller';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { AuthProvider } from '@/auth/AuthContext';
+import { ToastProvider } from '@/components/Toast';
 import { persister, queryClient } from '@/data/queryClient';
 import { RepositoriesProvider } from '@/data/repositories/context';
 import { NAV_THEME } from '@/lib/constants';
@@ -33,19 +34,21 @@ export default function RootLayout() {
   return (
     <SafeAreaProvider>
       <KeyboardProvider>
-        <PersistQueryClientProvider client={queryClient} persistOptions={{ persister }}>
-          <RepositoriesProvider>
-            <AuthProvider>
-              <RealtimeProvider>
-                <ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
-                  <StatusBar style={isDarkColorScheme ? 'light' : 'dark'} />
-                  <Stack screenOptions={{ headerShown: false }} />
-                  <PortalHost />
-                </ThemeProvider>
-              </RealtimeProvider>
-            </AuthProvider>
-          </RepositoriesProvider>
-        </PersistQueryClientProvider>
+        <ToastProvider>
+          <PersistQueryClientProvider client={queryClient} persistOptions={{ persister }}>
+            <RepositoriesProvider>
+              <AuthProvider>
+                <RealtimeProvider>
+                  <ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
+                    <StatusBar style={isDarkColorScheme ? 'light' : 'dark'} />
+                    <Stack screenOptions={{ headerShown: false }} />
+                    <PortalHost />
+                  </ThemeProvider>
+                </RealtimeProvider>
+              </AuthProvider>
+            </RepositoriesProvider>
+          </PersistQueryClientProvider>
+        </ToastProvider>
         <KeyboardToolbar />
       </KeyboardProvider>
     </SafeAreaProvider>

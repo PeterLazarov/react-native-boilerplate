@@ -20,6 +20,8 @@ seams (REST today, SQLite-ready later).
 | Auth         | JWT access + refresh, tokens in `expo-secure-store`    |
 | KV           | `react-native-mmkv` behind a `KeyValueStore` interface |
 | Realtime     | seam only (no-op) — transport TBD, see PLAN.md P5      |
+| Forms        | react-hook-form + zod                                  |
+| Keyboard     | react-native-keyboard-controller                       |
 | i18n         | i18next (BG/EN)                                        |
 | Errors       | Sentry                                                 |
 

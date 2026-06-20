@@ -11,6 +11,7 @@ import { PortalHost } from '@rn-primitives/portal';
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
+import { KeyboardProvider, KeyboardToolbar } from 'react-native-keyboard-controller';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { AuthProvider } from '@/auth/AuthContext';
 import { persister, queryClient } from '@/data/queryClient';
@@ -31,19 +32,22 @@ export default function RootLayout() {
 
   return (
     <SafeAreaProvider>
-      <PersistQueryClientProvider client={queryClient} persistOptions={{ persister }}>
-        <RepositoriesProvider>
-          <AuthProvider>
-            <RealtimeProvider>
-              <ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
-                <StatusBar style={isDarkColorScheme ? 'light' : 'dark'} />
-                <Stack screenOptions={{ headerShown: false }} />
-                <PortalHost />
-              </ThemeProvider>
-            </RealtimeProvider>
-          </AuthProvider>
-        </RepositoriesProvider>
-      </PersistQueryClientProvider>
+      <KeyboardProvider>
+        <PersistQueryClientProvider client={queryClient} persistOptions={{ persister }}>
+          <RepositoriesProvider>
+            <AuthProvider>
+              <RealtimeProvider>
+                <ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
+                  <StatusBar style={isDarkColorScheme ? 'light' : 'dark'} />
+                  <Stack screenOptions={{ headerShown: false }} />
+                  <PortalHost />
+                </ThemeProvider>
+              </RealtimeProvider>
+            </AuthProvider>
+          </RepositoriesProvider>
+        </PersistQueryClientProvider>
+        <KeyboardToolbar />
+      </KeyboardProvider>
     </SafeAreaProvider>
   );
 }

@@ -81,13 +81,6 @@ export default function ComponentsGallery() {
         </View>
       </Section>
 
-      <Section title="Input">
-        <View className="gap-1.5">
-          <Label>Email</Label>
-          <Input placeholder="you@example.com" />
-        </View>
-      </Section>
-
       <Section title="Card">
         <Card>
           <CardHeader>
@@ -121,6 +114,13 @@ export default function ComponentsGallery() {
             </DialogHeader>
           </DialogContent>
         </Dialog>
+      </Section>
+
+      <Section title="Input">
+        <View className="gap-1.5">
+          <Label>Email</Label>
+          <Input placeholder="you@example.com" />
+        </View>
       </Section>
     </Screen>
   );

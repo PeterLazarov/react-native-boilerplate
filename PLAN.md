@@ -22,6 +22,8 @@ scope for this repo.
 | i18n         | i18next — BG/EN, Cyrillic, BGN/EUR                                    |
 | Errors       | Sentry                                                                |
 | Theming      | token bridge in place; light/dark + RNR theming deferred              |
+| Forms        | react-hook-form + zod (FormField/FormInput)                           |
+| Keyboard     | react-native-keyboard-controller (provider + aware scroll + toolbar)  |
 
 ## Architecture — why it's swap-safe
 

@@ -3,6 +3,7 @@ import '@/i18n';
 
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
+import { PortalHost } from '@rn-primitives/portal';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import { queryClient, persister } from '@/data/queryClient';
@@ -22,6 +23,8 @@ export default function RootLayout() {
             <RealtimeProvider>
               <StatusBar style="auto" />
               <Stack screenOptions={{ headerShown: false }} />
+              {/* Overlay host for rn-primitives (Dialog, Select, Toast, …). */}
+              <PortalHost />
             </RealtimeProvider>
           </AuthProvider>
         </RepositoriesProvider>

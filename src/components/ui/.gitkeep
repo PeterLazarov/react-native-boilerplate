@@ -1,0 +1,3 @@
+# React Native Reusables components are added here via the RNR CLI
+# (e.g. `npx @react-native-reusables/cli@latest add button`) and OWNED in-repo.
+# Verify the exact CLI invocation against current RNR docs before first use.

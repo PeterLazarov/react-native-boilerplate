@@ -1,0 +1,12 @@
+{
+  "app": {
+    "name": "App Boilerplate"
+  },
+  "home": {
+    "title": "Начало",
+    "skeletonNotice": "Скелет (commit 1) — все още няма функционалности."
+  },
+  "auth": {
+    "signIn": "Вход"
+  }
+}

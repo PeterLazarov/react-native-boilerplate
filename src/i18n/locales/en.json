@@ -1,0 +1,12 @@
+{
+  "app": {
+    "name": "App Boilerplate"
+  },
+  "home": {
+    "title": "Home",
+    "skeletonNotice": "Commit 1 skeleton — no features yet."
+  },
+  "auth": {
+    "signIn": "Sign in"
+  }
+}

@@ -1,0 +1,3 @@
+# Future home of SQLite repository implementations (see PLAN.md).
+# Each will implement the same interface in ../types.ts; swapping is a one-line
+# change in src/data/index.ts.

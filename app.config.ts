@@ -9,6 +9,7 @@ const config: ExpoConfig = {
   scheme: 'appboilerplate', // deep-link scheme — required by expo-router + push/tracking links
   version: '0.1.0',
   orientation: 'portrait',
+  userInterfaceStyle: 'automatic', // follow the OS light/dark setting
   newArchEnabled: true, // mandatory on recent SDKs; stated explicitly for clarity
   ios: {
     supportsTablet: true,

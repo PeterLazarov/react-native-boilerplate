@@ -48,6 +48,19 @@ npm run ios       # or: npm run android
 Then `npm start` for the dev server. `npm run verify` runs typecheck + lint +
 prettier.
 
+## Common commands (just)
+
+A [`justfile`](./justfile) wraps the multi-step flows. Install once with
+`brew install just`, then `just` to list recipes. Highlights:
+
+```bash
+just setup          # npm install + reconcile native versions
+just start-clean    # Metro against the Dev Client, cache cleared
+just run            # build + run iOS Dev Client (just run android for Android)
+just rebuild        # prebuild --clean + run — after native config/dep changes
+just check          # verify (typecheck/lint/prettier) + a real bundle
+```
+
 ## How it fits together
 
 ```
